@@ -17,25 +17,25 @@ Increasing neural network capacity has been a successful trend in the modeling o
 
 # Paper Overview
 
-Following this line of work, the paper introduced a new model called PaLI(Pathways Language and Image model). PaLI performs many image-only, language-only, and image+language tasks, across many languages, using a single “image-and-text to text” interface. A key point to PaLI is that it reuses the large unimodal backbones for language and vision modeling, in order to transfer existing capabilities and reduce training cost. The paper combined large pretrained encoder-decoder language models and Vision Transformers (ViTs) together to train PaLI. Joint scaling of the vision and language components is an important idea in this paper. Since existing Transformers for language are much larger than their vision counterparts, this paper retrained the vision transformer and introduced the largest ViT to date (ViT-e) to quantify the benefits from even larger-capacity vision models. To train PaLI, the authors created a large multilingual mix of pretraining tasks, based on a new image-text dataset called WebLI, containing 10B images and texts in over 100 languages. Overall, PaLI generated the best result in multiple vision and language tasks (such as captioning, visual question- answering, scene-text understanding), while retaining a simple, modular, and scalable design. 
+Following this line of work, the paper introduced a new model called PaLI(Pathways Language and Image model). PaLI performs many image-only, language-only, and image+language tasks, across many languages, using a single “image-and-text to text” interface. A key point to PaLI is that it reuses the large unimodal backbones for language and vision modeling, in order to transfer existing capabilities and reduce training cost. The paper combined large pretrained encoder-decoder language models and Vision Transformers (ViTs) together to train PaLI. Joint scaling of the vision and language components is an important idea in this paper. Since existing Transformers for language are much larger than their vision counterparts, this paper retrained the vision transformer and introduced the largest ViT to date (ViT-e). To train PaLI, the authors created a large multilingual mix of pretraining tasks, based on a new image-text dataset called WebLI, containing 10B images and texts in over 100 languages. Overall, PaLI generated the best result in multiple vision and language tasks such as captioning, visual question-answering, scene-text understanding, while retaining a simple, modular, and scalable design. 
 
 
 # Model Architecture
 
 ![](https://github.com/TingleiWu/PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation/blob/main/Image_folder/LILM%20%20PaLI%2006.gif)
 
-The model accepts image and text as the input and generates text as output. Since all tasks are performed with the same model, we use text-based prompts to indicate to the model which task to perform.
-This image shows a high-level schematic of the model architecture. At its core, we have a text encoder-decoder Transformer. To include vision/image as input, the text encoder is fed with a sequence of visual “tokens”: output features of a Vision Transformer which takes as input an image. No pooling is applied to the output of the Vision Transformer before passing the visual tokens to the encoder-decoder model via cross-attention. We reuse previously trained unimodal checkpoints. For the text encoder-decoder, we reuse pre-trained mT5 models, while for the image encoder, we reuse large vanilla ViT models.
+The model accepts image and text as the input and generates text as output. Becaseu this model can perform different tasks, test-based prompt is used to indicate to the model which task to perform.
+This image shows a high-level schematic of the model architecture. At its core, we have a text encoder-decoder Transformer. To include vision/image as input, the text encoder is fed with a sequence of visual “tokens”: output features of a Vision Transformer which takes as input an image. No pooling is applied to the output of the Vision Transformer before passing the visual tokens to the encoder-decoder model via cross-attention. The authors reused previously trained unimodal as the starting point. For the text encoder-decoder, the author reused pretrained mT5 models, while for the image encoder, we reused ViT models.
 
 ### Visual Component
 
 <img width="409" alt="Screen Shot 2023-03-25 at 4 15 26 PM" src="https://user-images.githubusercontent.com/89117508/227742456-5bd70bbf-60d5-43fb-9ba4-f91a168c2df4.png">
 
-For the visual component, ViT-e has taken the place and it has the same architecture and uses the same training recipe as the 1.8B parameter ViT-G model, and it is scaled to 4B parameters. Scaling up vision backbones leads to saturating gains on classification tasks such as ImageNet. In other words, this scailing up technique does not show much improvement in terms of image classification task. We further confirm this, observing that ViT-e is only marginally better than ViT-G on ImageNet. However, we observe substantial performance improvements from ViT-e on vision-language combined tasks in PaLI, 
+For the visual component, ViT-e has taken the place and it has the same architecture and uses the same training recipe as the 1.8B parameter ViT-G model, and it is scaled to 4B parameters. Scaling up vision backbones leads to saturating gains on classification tasks such as ImageNet. In other words, this scailing up technique does not show much improvement in terms of image classification task. However, substantial performance improvements observed from ViT-e on vision-language combined tasks in PaLI, 
 
 ### Language Component
 
-mT5 backbone was used as our language modeling component. We used both the pretrained mT5-Large (1B parameters) and the mT5-XXL (13B parameters), from which we initialize the language encoder-decoder of PaLI. Many different tasks are trained such as pure language understanding tasks.
+mT5 backbone was used as our language modeling component. Both the pretrained mT5-Large (1B parameters) and the mT5-XXL (13B parameters) were used, from which we initialize the language encoder-decoder of PaLI. Many different tasks are trained such as pure language understanding tasks.
 
 ### Overall Model
 
@@ -106,12 +106,12 @@ The first row is the result reported by its original paper. The second row is th
 
 
 # Critical Analysis
-- The paper lacks a detailed discussion of the limitations and potential drawbacks of the proposed model. For example, it is unclear how well the model generalizes to out-of-distribution languages or how sensitive it is to the quality and size of the image and text data.
+- The paper showed some limitations and potential drawbacks of the proposed model, but it failed to consider them in detail. For example, it is unclear how well the model generalizes to out-of-distribution languages or how sensitive it is to the quality and size of the image and text data.
 - The paper does not provide a detailed analysis of the computational complexity and scalability of the proposed model. Nowadays, it is important to evaluate and understand the practical feasibility of training and deploying such models in real-world scenarios.
 
 # Questions
-- What are the potential applications of PaLI in industry or real-world scenarios, and what challenges need to be addressed to deploy such models in practice?
-- 3. What ethical considerations should be taken into account when building and deploying multilingual language-image models like PaLI, particularly with regards to issues of bias, representation, and cultural sensitivity?
+- What are the potential applications of PaLI in industry or real-world scenarios that you can think of?
+- What ethical considerations should be taken into account when building and deploying multilingual language-image models like PaLI, particularly with regards to issues of bias, representation, and cultural sensitivity?
 
 
 
