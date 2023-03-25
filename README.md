@@ -28,15 +28,15 @@ The model accepts image and test as the input and generates text as output. Sinc
 This image shows a high-level schematic of the model architecture. At its core, we have a text encoder-decoder Transformer. To include vision/image as input, the text encoder is fed with a sequence of visual “tokens”: output features of a Vision Transformer which takes as input an image. No pooling is applied to the output of the Vision Transformer before passing the visual tokens to the encoder-decoder model via cross-attention.
 We reuse previously trained unimodal checkpoints. For the text encoder-decoder, we reuse pre-trained mT5 models, while for the image encoder, we reuse large vanilla ViT models.
 
-## Visual Component
+### Visual Component
 
 For the visual component, ViT-e has taken the place and it has the same architecture and uses the same training recipe as the 1.8B parameter ViT-G model, and it is scaled to 4B parameters. While Scaling up vision backbones leads to saturating gains on classification tasks such as ImageNet. In other words, this scailing up technique does not show much improvement in terms of image classification task. We further confirm this, observing that ViT-e is only marginally better than ViT-G on ImageNet. However, we observe substantial performance improvements from ViT-e on vision-language combined tasks in PaLI, 
 
-## Language Component
+### Language Component
 
 mT5 backbone was used as our language modeling component. We used both the pretrained mT5-Large (1B parameters) and the mT5-XXL (13B parameters), from which we initialize the language encoder-decoder of PaLI. Many different tasks are trained such as pure language understanding tasks.
 
-## Overall Model
+### Overall Model
 
 <img width="696" alt="Screen Shot 2023-03-25 at 2 16 58 PM" src="https://user-images.githubusercontent.com/89117508/227737064-4b3f9710-0d28-4e6d-9d0f-26df62e61ea3.png">
 
