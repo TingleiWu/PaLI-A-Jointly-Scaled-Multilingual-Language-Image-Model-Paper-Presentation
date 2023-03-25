@@ -76,7 +76,20 @@ For the learning rate, we use a 1k-step linear warmup, followed by inverse squar
 
 # Testing
 
+We evaluate on multiple downstream tasks that include a number of vision and language benchmarks, and additionally language-only and vision-only benchmarks.
+
 ### Image Captioning(COCO Captions, NoCaps, TextCaps, Multilingual captioning on XM-3600)
+
+<img width="514" alt="Screen Shot 2023-03-25 at 4 48 45 PM" src="https://user-images.githubusercontent.com/89117508/227744253-54f3094f-2dcb-45df-b95d-a1eb6a80efa2.png">
+
+PaLI outperformed all the other models and established a new high at 149.1 CIDEr(Consensus-based Image Description Evaluation) points for COCO Captions. PaLI generated similar but suboptimal results for NoCaps compare to GIT2, and it showed subtantial performance improvement for TextCaps.
+
+<img width="706" alt="Screen Shot 2023-03-25 at 5 01 09 PM" src="https://user-images.githubusercontent.com/89117508/227744396-6d9c98f5-2054-436e-b96e-bad161ee7e9d.png">
+
+CIDEr scores on image captioning for the Crossmodal-3600 benchmark, covering seven diverse languages (English, French, Hindi, Hebrew, Romanian, Thai, and Chinese), as well as the average of the 35 languages covered by the benchmark
+
+### Visual Question Answering(VQA)
+
 
 
 
