@@ -24,6 +24,7 @@
 
 > <img width="579" alt="model_arc" src="https://user-images.githubusercontent.com/89117508/227736426-325f70db-1847-4cee-8c95-951f789e948f.png">
 
+wfowdnvniwrv
 
 # Data
 
