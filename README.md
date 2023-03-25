@@ -7,7 +7,6 @@
 - [Data](#data)
 - [Pretraining Tasks](#pretraining-tasks)
 - [Testing](#testing)
-- [Limitations/Biases](#limitations/Biases)
 - [Critical Analysis](#critical-analysis)
 - [Link](#link)
 
@@ -105,18 +104,9 @@ Since PaLI is pretrained with a diverse mixture of multimodal tasks with image a
 The first row is the result reported by its original paper. The second row is the result using the publicly available mT5-XXL checkpoint, which is also the starting point for PaLI-17B. The third row results are using the trained PaLI-17B model.
 
 
-
-
-
-
-
-
-
-
-# Limitations/Biases
-
-
 # Critical Analysis
+- The paper lacks a detailed discussion of the limitations and potential drawbacks of the proposed model. For example, it is unclear how well the model generalizes to out-of-distribution languages or how sensitive it is to the quality and size of the image and text data.
+- The paper does not provide a detailed analysis of the computational complexity and scalability of the proposed model. Nowadays, it is important to evaluate and understand the practical feasibility of training and deploying such models in real-world scenarios.
 
 
 # Link
@@ -125,3 +115,4 @@ The first row is the result reported by its original paper. The second row is th
 - [Webli Data Card](https://github.com/google-research/google-research/blob/master/pali/webli_data_card.pdf)
 - [PaLI Model Card](https://github.com/google-research/google-research/blob/master/pali/pali_model_card.pdf)
 - [Vison Transformer](https://viso.ai/deep-learning/vision-transformer-vit/#:~:text=The%20ViT%20is%20a%20visual,class%20labels%20for%20the%20image.)
+- [Multilingual captioning on XM-3600](https://arxiv.org/pdf/2205.12522.pdf)
