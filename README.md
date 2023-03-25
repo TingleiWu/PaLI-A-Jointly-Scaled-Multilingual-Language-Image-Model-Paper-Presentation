@@ -1,7 +1,7 @@
 # PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation
 
 # Outline
-- [Introduction](#Overview)
+- [Introduction](#Introduction)
 - [Ppaper Overview](#Paper Overview)
 - [Model Architecture](#Model Architecture)
 - [Data](#Data)
