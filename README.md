@@ -91,4 +91,5 @@ For the learning rate, we use a 1k-step linear warmup, followed by inverse squar
 
 - [Introduction to CIDEr](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)
 - [Webli Data Card](https://github.com/google-research/google-research/blob/master/pali/webli_data_card.pdf)
+- [PaLI Model Card](https://github.com/google-research/google-research/blob/master/pali/pali_model_card.pdf)
 - [Vison Transformer](https://viso.ai/deep-learning/vision-transformer-vit/#:~:text=The%20ViT%20is%20a%20visual,class%20labels%20for%20the%20image.)
