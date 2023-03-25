@@ -12,7 +12,7 @@
 
 # Overview
 
-> This project mainly focuses on utilizing  the technology of deep learning models to detect different emotions of people in an image. Emotion detection is a way to understand people better in social settings to detect feelings like happiness, sadness, surprise at a specific moment without actually asking them. It is useful in many areas like security, investigation and healthcare. After the algorithm was built, an emotion detection website was developed to allow users to upload images, and get the appropriate emotion of the person in the image.
+> Increasing neural network capacity has been a successful trend in the modeling of language and vision tasks. Language models such as G5 and GPT-3 have shown significant advantages from training large Transformers on large amounts text data. On the other hand, vision models such as CNNs and Vision Transformers have seen similar benefits from scaling but to a lesser extent compared to language models. Language-and-vision modeling are also popular now dealing with problems like Image Captioning and Visual Question-Answering. 
 
 # Model Architecture
 
