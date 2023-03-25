@@ -2,13 +2,13 @@
 
 # Outline
 - [Introduction](#Overview)
-- [Paper Overview](#Paper Overview)
-- [Model Architecture](#Model Architecture)
+- [Overview](#Paper Overview)
+- [Architecture](#Model Architecture)
 - [Data](#Data)
-- [Pretraining Tasks](#Pretraining Tasks)
+- [Pretraining_Tasks](#Pretraining Tasks)
 - [Testing](#Testing)
 - [Limitations/Biases](#Limitations/Biases)
-- [Critical Analysis](#Critical Analysis)
+- [Critical_Analysis](#Critical Analysis)
 - [Link](#Link)
 
 # Introduction
