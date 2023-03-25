@@ -22,7 +22,7 @@
 
 # Model Architecture
 
-> <img width="579" alt="model_arc" src="https://user-images.githubusercontent.com/89117508/227736426-325f70db-1847-4cee-8c95-951f789e948f.png">
+![](https://github.com/TingleiWu/PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation/blob/main/Image_folder/LILM%20%20PaLI%2006.gif)
 
 The model accepts image and test as the input and generates text as output. Since all tasks are performed with the same model, we use text-based prompts to indicate to the model which task to perform.
 This image shows a high-level schematic of the model architecture. At its core, we have a text encoder-decoder Transformer. To include vision/image as input, the text encoder is fed with a sequence of visual “tokens”: output features of a Vision Transformer which takes as input an image. No pooling is applied to the output of the Vision Transformer before passing the visual tokens to the encoder-decoder model via cross-attention.
