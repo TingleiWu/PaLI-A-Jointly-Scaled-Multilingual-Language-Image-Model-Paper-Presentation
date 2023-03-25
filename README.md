@@ -67,7 +67,7 @@ To accommodate diverse tasks in the image-language space, we train PaLI using a 
 - English-only Object-Aware (OA) VQA
 - Object detection
 
-The overall size of the data we use for pretraining is 1.6B examples. This dataset is comparable, but slightly smaller and designed to be cleaner than the datasets used in SimVLM (1.8B), CoCa (1.8B), and Flamingo (2.3B). However, unlike other datasets mentioned above, WebLI is multilingual, so the 1.6B examples follow a long-tailed distribution over the 100+ languages covered.
+The overall size of the data we use for pretraining is 1.6B examples. This dataset is comparable, but slightly smaller and designed to be cleaner than the datasets used in SimVLM (1.8B), CoCa (1.8B), and Flamingo (2.3B). However, unlike other datasets, WebLI is multilingual, so the 1.6B examples follow a long-tailed distribution over the 100+ languages covered.
 
 ### Training detail for the model
 
@@ -95,6 +95,18 @@ all of the VQA results reported in this paper are performed in the open-vocabula
 <img width="654" alt="Screen Shot 2023-03-25 at 5 17 34 PM" src="https://user-images.githubusercontent.com/89117508/227744961-637b693e-7e90-423d-a421-ffd06fedabfb.png">
 
 VQA Accuracy results on VQAv2, OKVQA, TextVQA, and VizWiz-QA. PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification evaluations (SimVLM, CoCa, BEiT3, OFA). Mia (with “†”) is the winning model of TextVQA Challenge 2021. Numbers shown in gray are from models using closed-vocabulary classification. OKVQA is the benchmark that requires external knowledge to answer its questions, that is, knowledge that is not directly present in the image input, and instead needs to be indirectly inferred by the model. Therefore, the results from Flamingo and PaLI-17B suggest that leveraging external knowledge does not necessarily require specific training, and instead can be achieved with generic large-capacity models trained on large amounts of data.
+
+### Language-understanding Capabilities
+
+Since PaLI is pretrained with a diverse mixture of multimodal tasks with image and text data, it raises the question on whether it would “forget” its language modeling capability. Therefore, we compare mT5-XXL and PaLI-17B on a range of language understanding benchmarks, including the English-only SuperGLUE benchmark and three multilingual benchmarks: XNLI, XQuAD, TyDiQA-GoldP. 
+
+<img width="666" alt="Screen Shot 2023-03-25 at 5 30 14 PM" src="https://user-images.githubusercontent.com/89117508/227745380-527df346-1d41-41db-a4cb-f715853d455f.png">
+
+The first row is the result reported by its original paper. The second row is the result using the publicly available mT5-XXL checkpoint, which is also the starting point for PaLI-17B. The third row results are using the trained PaLI-17B model.
+
+
+
+
 
 
 
