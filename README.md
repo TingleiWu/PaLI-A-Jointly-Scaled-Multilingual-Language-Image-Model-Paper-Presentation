@@ -1,12 +1,12 @@
 # PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation
 
 # Outline
-- [Overview](#project-overview)
-- [Model Architecture](#data)
-- [Data](#modeling)
-- [Pretraining Tasks](#potential-use-cases)
-- [Testing](#resources)
-- [Limitations/Biases](#contributors)
+- [Overview](#Overview)
+- [Model Architecture](#Model Architecture)
+- [Data](#Data)
+- [Pretraining Tasks](#Pretraining Tasks)
+- [Testing](#Testing)
+- [Limitations/Biases](#Limitations/Biases)
 - [Critical Analysis](#Critical Analysis)
 - [Link](#Link)
 
