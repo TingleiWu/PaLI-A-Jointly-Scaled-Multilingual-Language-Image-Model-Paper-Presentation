@@ -1,15 +1,15 @@
 # PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation
 
 # Outline
-- [Introduction](#Introduction)
-- [Ppaper Overview](# Paper Overview)
-- [Model Architecture](# Model Architecture)
-- [Data](# Data)
-- [Pretraining Tasks](# Pretraining Tasks)
-- [Testing](# Testing)
-- [Limitations/Biases](# Limitations/Biases)
-- [Critical Analysis](# Critical Analysis)
-- [Link](# Link)
+- [Introduction](#introduction)
+- [Ppaper Overview](#paper overview)
+- [Model Architecture](#model architecture)
+- [Data](#data)
+- [Pretraining Tasks](#pretraining tasks)
+- [Testing](#testing)
+- [Limitations/Biases](#limitations/Biases)
+- [Critical Analysis](#critical analysis)
+- [Link](#link)
 
 # Introduction
 
@@ -24,13 +24,12 @@ Following this line of work, the paper introduced a new model called PaLI(Pathwa
 
 ![](https://github.com/TingleiWu/PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation/blob/main/Image_folder/LILM%20%20PaLI%2006.gif)
 
-The model accepts image and test as the input and generates text as output. Since all tasks are performed with the same model, we use text-based prompts to indicate to the model which task to perform.
-This image shows a high-level schematic of the model architecture. At its core, we have a text encoder-decoder Transformer. To include vision/image as input, the text encoder is fed with a sequence of visual “tokens”: output features of a Vision Transformer which takes as input an image. No pooling is applied to the output of the Vision Transformer before passing the visual tokens to the encoder-decoder model via cross-attention.
-We reuse previously trained unimodal checkpoints. For the text encoder-decoder, we reuse pre-trained mT5 models, while for the image encoder, we reuse large vanilla ViT models.
+The model accepts image and text as the input and generates text as output. Since all tasks are performed with the same model, we use text-based prompts to indicate to the model which task to perform.
+This image shows a high-level schematic of the model architecture. At its core, we have a text encoder-decoder Transformer. To include vision/image as input, the text encoder is fed with a sequence of visual “tokens”: output features of a Vision Transformer which takes as input an image. No pooling is applied to the output of the Vision Transformer before passing the visual tokens to the encoder-decoder model via cross-attention. We reuse previously trained unimodal checkpoints. For the text encoder-decoder, we reuse pre-trained mT5 models, while for the image encoder, we reuse large vanilla ViT models.
 
 ### Visual Component
 
-For the visual component, ViT-e has taken the place and it has the same architecture and uses the same training recipe as the 1.8B parameter ViT-G model, and it is scaled to 4B parameters. While Scaling up vision backbones leads to saturating gains on classification tasks such as ImageNet. In other words, this scailing up technique does not show much improvement in terms of image classification task. We further confirm this, observing that ViT-e is only marginally better than ViT-G on ImageNet. However, we observe substantial performance improvements from ViT-e on vision-language combined tasks in PaLI, 
+For the visual component, ViT-e has taken the place and it has the same architecture and uses the same training recipe as the 1.8B parameter ViT-G model, and it is scaled to 4B parameters. Scaling up vision backbones leads to saturating gains on classification tasks such as ImageNet. In other words, this scailing up technique does not show much improvement in terms of image classification task. We further confirm this, observing that ViT-e is only marginally better than ViT-G on ImageNet. However, we observe substantial performance improvements from ViT-e on vision-language combined tasks in PaLI, 
 
 ### Language Component
 
@@ -51,13 +50,14 @@ Three models are considered:
 
 <img width="718" alt="Screen Shot 2023-03-25 at 3 14 01 PM" src="https://user-images.githubusercontent.com/89117508/227739411-aae6b871-4b2c-47bc-abdd-20965d51d1a9.png">
 
-WebLI, a multilingual image-language dataset built from images and texts available on the public web, was used to train the PaLI model. WebLI scales up the image language data collection from English-only datasets to 109 languages, which enables us to pretrain PaLI multilingually, and perform downstream tasks across many lan- guages. Due to the abundance of multilingual content on the internet, the collection process for the WebLI dataset can be scaled to cover 10 billion images and 12 billion alt-texts. In addition to annotation with web text, we apply the GCP Vision API to extract OCR annotations on all images, resulting in 29 billion image-OCR pairs.
+WebLI, a multilingual image-language dataset built from images and texts available on the public web, was used to train the PaLI model. WebLI scales up the image language data collection from English-only datasets to 109 languages, which enables us to pretrain PaLI multilingually, and perform downstream tasks across many languages. Due to the abundance of multilingual content on the internet, the collection process for the WebLI dataset can be scaled to cover 10 billion images and 12 billion alt-texts. In addition to annotation with web text, we apply the GCP Vision API to extract OCR annotations on all images, resulting in 29 billion image-OCR pairs.
 
-De-duplication applied on this WebLI dataset to mitigate train-to-test leakage. This was done by removing images against 68 common vision/vision-language datasets. Eliminating these images from the WebLI dataset does not result in any significant shrinkage (0.36%)
-
+De-duplication applied on this WebLI dataset to mitigate train-to-test leakage. This was done by removing images against 68 common vision/vision-language datasets. Eliminating these images from the WebLI dataset does not result in any significant shrinkage (0.36%).
 
 
 # Pretraining Tasks
+
+
 
 
 # Testing
