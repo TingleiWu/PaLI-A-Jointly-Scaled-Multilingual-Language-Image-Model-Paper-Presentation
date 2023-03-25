@@ -7,8 +7,8 @@
 - [Pretraining Tasks](#potential-use-cases)
 - [Testing](#resources)
 - [Limitations/Biases](#contributors)
-- [Critical Analysis](# Critical Analysis)
-- [Link](# Link)
+- [Critical Analysis](#Critical Analysis)
+- [Link](#Link)
 
 # Overview
 
