@@ -13,7 +13,7 @@
 
 # Introduction
 
-Increasing neural network capacity has been a successful trend in the modeling of language and vision tasks. Language models such as T5 and GPT-3 have shown significant advantages from training large Transformers on large amounts text data. On the other hand, vision models such as CNNs and Vision Transformers have seen similar benefits from scaling but to a lesser extent compared to language models. Language-and-vision modeling are also popular now dealing with problems like Image Captioning and Visual Question-Answering(VQA).
+Increasing neural network capacity has been a successful trend in the modeling of language and vision tasks. Language models such as T5 and GPT-3 have shown significant advantages from training large Transformers on large amounts text data. On the other hand, vision models such as CNNs and Vision Transformers have seen similar benefits from scaling but to a lesser extent compared to language models. Language-and-vision models like COCA and Florence are also popular now dealing with problems like Image Captioning and Visual Question-Answering(VQA).
 
 # Paper Overview
 
