@@ -24,7 +24,7 @@ Following this line of work, the paper introduced a new model called PaLI(Pathwa
 
 ![](https://github.com/TingleiWu/PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation/blob/main/Image_folder/LILM%20%20PaLI%2006.gif)
 
-The model accepts image and text as the input and generates text as output. Becaseu this model can perform different tasks, test-based prompt is used to indicate to the model which task to perform.
+The model accepts image and text as the input and generates text as output. Becaseu this model can perform different tasks, text-based prompt is used to indicate to the model which task to perform.
 This image shows a high-level schematic of the model architecture. At its core, we have a text encoder-decoder Transformer. To include vision/image as input, the text encoder is fed with a sequence of visual “tokens”: output features of a Vision Transformer which takes as input an image. No pooling is applied to the output of the Vision Transformer before passing the visual tokens to the encoder-decoder model via cross-attention. The authors reused previously trained unimodal as the starting point. For the text encoder-decoder, the author reused pretrained mT5 models, while for the image encoder, we reused ViT models.
 
 ### Visual Component
