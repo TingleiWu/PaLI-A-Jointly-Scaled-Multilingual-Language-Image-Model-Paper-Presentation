@@ -94,14 +94,6 @@ All of the VQA results reported in this paper are performed in the open-vocabula
 
 PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification evaluations (SimVLM, CoCa, BEiT3, OFA). Numbers shown in gray are from models using closed-vocabulary classification. Mia (with “†”) is the winning model of TextVQA Challenge 2021. OKVQA is the benchmark that requires external knowledge to answer its questions, that is, knowledge that is not directly present in the image input, and instead needs to be indirectly inferred by the model. Therefore, the results from Flamingo and PaLI-17B suggest that leveraging external knowledge does not necessarily require specific training, and instead can be achieved with generic large-capacity models trained on large amounts of data.
 
-### Language-understanding Capabilities
-
-Since PaLI is pretrained with a diverse mixture of multimodal tasks with image and text data, it raises the question on whether it would “forget” its language modeling capability. Therefore, we compare mT5-XXL and PaLI-17B on a range of language understanding benchmarks, including the English-only SuperGLUE benchmark and three multilingual benchmarks: XNLI, XQuAD, TyDiQA-GoldP. 
-
-<img width="666" alt="Screen Shot 2023-03-25 at 5 30 14 PM" src="https://user-images.githubusercontent.com/89117508/227745380-527df346-1d41-41db-a4cb-f715853d455f.png">
-
-The first row is the result reported by its original paper. The second row is the result using the publicly available mT5-XXL checkpoint, which is also the starting point for PaLI-17B. The third row results are using the trained PaLI-17B model.
-
 
 # Critical Analysis
 - The paper showed some limitations and potential drawbacks of the proposed model, but it failed to consider them in detail. For example, it is unclear how well the model generalizes to out-of-distribution languages or how sensitive it is to the quality and size of the image and text data.
