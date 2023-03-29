@@ -1,4 +1,4 @@
-# PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation
+# PaLI: A Jointly-Scaled Multilingual Language-Image Model
 
 # Outline
 - [Introduction](#introduction)
