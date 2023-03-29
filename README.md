@@ -92,7 +92,7 @@ All of the VQA results reported in this paper are performed in the open-vocabula
 
 <img width="654" alt="Screen Shot 2023-03-25 at 5 17 34 PM" src="https://user-images.githubusercontent.com/89117508/227744961-637b693e-7e90-423d-a421-ffd06fedabfb.png">
 
-PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification evaluations (SimVLM, CoCa, BEiT3, OFA). Numbers shown in gray are from models using closed-vocabulary classification. Mia (with “†”) is the winning model of TextVQA Challenge 2021. OKVQA is the benchmark that requires external knowledge to answer its questions, that is, knowledge that is not directly present in the image input, and instead needs to be indirectly inferred by the model. Therefore, the results from Flamingo and PaLI-17B suggest that leveraging external knowledge does not necessarily require specific training, and instead can be achieved with generic large-capacity models trained on large amounts of data.
+PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification evaluations (SimVLM, CoCa, BEiT3, OFA). Numbers shown in gray are from models using closed-vocabulary classification. Mia (with “†”) is the winning model of TextVQA Challenge 2021. 
 
 
 # Critical Analysis
