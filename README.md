@@ -71,12 +71,10 @@ The overall size of the data we use for pretraining is 1.6B examples. This datas
 
 ### Training detail for the model
 
-For the learning rate, we use a 1k-step linear warmup, followed by inverse square-root decay. For PaLI-3B, we use a peak learning rate of 0.01. For larger models, PaLI-15B and PaLI-17B, we use a peak learning rate of 0.005. The largest model, PaLI-17B, is pretrained using 1,024 GCP-TPUv4 chips for 7 days. It uses a four-way model partitioning and a batch size of 4,096. Overall, the model passes over 1.6B images, one epoch over the entire pretraining dataset. The image resolution for this pass is 224×224, and they later changed the image resolution to be 588×588 for pre-finetuning. During training, only the parameters of the language component are updated and the vision component is frozen, which provides a boost in performance.
+For the learning rate, the authors used a 1k-step linear warmup, followed by inverse square-root decay. For PaLI-3B, they use a peak learning rate of 0.01. For larger models, PaLI-15B and PaLI-17B, they use a peak learning rate of 0.005. Overall, the model passes over 1.6B images, one epoch over the entire pretraining dataset. The image resolution for this pass is 224×224, and they later changed the image resolution to be 588×588 for pre-finetuning. 
 
 
 # Testing
-
-We evaluate on multiple downstream tasks that include a number of vision and language benchmarks, and additionally language-only and vision-only benchmarks.
 
 ### Image Captioning(COCO Captions, NoCaps, TextCaps, Multilingual captioning on XM-3600)
 
@@ -86,15 +84,15 @@ PaLI outperformed all the other models and established a new high at 149.1 CIDEr
 
 <img width="706" alt="Screen Shot 2023-03-25 at 5 01 09 PM" src="https://user-images.githubusercontent.com/89117508/227744396-6d9c98f5-2054-436e-b96e-bad161ee7e9d.png">
 
-CIDEr scores on image captioning for the Crossmodal-3600 benchmark, covering seven diverse languages (English, French, Hindi, Hebrew, Romanian, Thai, and Chinese), as well as the average of the 35 languages covered by the benchmark
+CIDEr scores on image captioning for the Crossmodal-3600 benchmark(multilingual), covering seven diverse languages (English, French, Hindi, Hebrew, Romanian, Thai, and Chinese), as well as the average of the 35 languages covered by the benchmark
 
 ### Visual Question Answering(VQAv2, OKVQA, TextVQA, VizWiz-QA)
 
-all of the VQA results reported in this paper are performed in the open-vocabulary setting using the 250k mT5 vocabulary. Most prior works use the VQA-as-classification setting, where a best answer among a predefined set (usually of size 3k) needs to be selected. Note that the VQA-as-open-generation setting is challenging because: (1) The generated text is directly compared to the desired answer and only an exact match is counted as accurate. (2) The PaLI vocabulary covers 100+ languages and is significantly larger than both those used in the classification setting, and those used by previous single-language open-generation models 
+All of the VQA results reported in this paper are performed in the open-vocabulary setting. Most prior works use the VQA-as-classification setting, where a best answer among a predefined set (usually of size 3k) needs to be selected. Note that the VQA-as-open-generation setting is challenging because the generated text is directly compared to the desired answer and only an exact match is counted as accurate. 
 
 <img width="654" alt="Screen Shot 2023-03-25 at 5 17 34 PM" src="https://user-images.githubusercontent.com/89117508/227744961-637b693e-7e90-423d-a421-ffd06fedabfb.png">
 
-VQA Accuracy results on VQAv2, OKVQA, TextVQA, and VizWiz-QA. PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification evaluations (SimVLM, CoCa, BEiT3, OFA). Mia (with “†”) is the winning model of TextVQA Challenge 2021. Numbers shown in gray are from models using closed-vocabulary classification. OKVQA is the benchmark that requires external knowledge to answer its questions, that is, knowledge that is not directly present in the image input, and instead needs to be indirectly inferred by the model. Therefore, the results from Flamingo and PaLI-17B suggest that leveraging external knowledge does not necessarily require specific training, and instead can be achieved with generic large-capacity models trained on large amounts of data.
+PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification evaluations (SimVLM, CoCa, BEiT3, OFA). Numbers shown in gray are from models using closed-vocabulary classification. Mia (with “†”) is the winning model of TextVQA Challenge 2021. OKVQA is the benchmark that requires external knowledge to answer its questions, that is, knowledge that is not directly present in the image input, and instead needs to be indirectly inferred by the model. Therefore, the results from Flamingo and PaLI-17B suggest that leveraging external knowledge does not necessarily require specific training, and instead can be achieved with generic large-capacity models trained on large amounts of data.
 
 ### Language-understanding Capabilities
 
