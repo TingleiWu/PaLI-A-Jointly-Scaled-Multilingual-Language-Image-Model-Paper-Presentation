@@ -103,7 +103,7 @@ PaLI models are evaluated in the open-vocabulary generation setting, and still o
 - What are the potential applications of PaLI in industry or real-world scenarios that you can think of?
 - What ethical considerations should be taken into account when building and deploying multilingual language-image models like PaLI, particularly with regards to issues of bias, representation, and cultural sensitivity?
 
-# Papaer Overview Video Recording
+# Paper Overview Video Recording
 
 - [Link to video](https://github.com/TingleiWu/PaLI-A-Jointly-Scaled-Multilingual-Language-Image-Model-Paper-Presentation/tree/main/video_recording)
 
