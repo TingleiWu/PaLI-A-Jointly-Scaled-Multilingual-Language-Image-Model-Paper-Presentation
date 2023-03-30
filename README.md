@@ -8,7 +8,6 @@
 - [Pretraining Tasks](#pretraining-tasks)
 - [Testing](#testing)
 - [Critical Analysis](#critical-analysis)
-- [Questions](#questions)
 - [Link](#link)
 
 # Introduction
