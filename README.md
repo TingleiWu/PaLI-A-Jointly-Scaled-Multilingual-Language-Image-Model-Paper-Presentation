@@ -56,6 +56,9 @@ WebLI, a multilingual image-language dataset built from images and texts availab
 
 De-duplication applied on this WebLI dataset to mitigate train-to-test leakage. This was done by removing images against 68 common vision/vision-language datasets. Eliminating these images from the WebLI dataset does not result in any significant shrinkage (0.36%).
 
+# Question 1
+- What ethical considerations should be taken into account when building and deploying multilingual language-image models like PaLI, particularly with regards to issues of bias, representation, and cultural sensitivity?
+
 
 # Pretraining Tasks
 
@@ -99,9 +102,9 @@ PaLI models are evaluated in the open-vocabulary generation setting, and still o
 - The paper showed some limitations and potential drawbacks of the proposed model, but it failed to consider them in detail. For example, it is unclear how well the model generalizes to out-of-distribution languages or how sensitive it is to the quality and size of the image and text data.
 - The paper does not provide a detailed analysis of the computational complexity and scalability of the proposed model. Nowadays, it is important to evaluate and understand the practical feasibility of training and deploying such models in real-world scenarios.
 
-# Questions
+# Question 2
 - What are the potential applications of PaLI in industry or real-world scenarios that you can think of?
-- What ethical considerations should be taken into account when building and deploying multilingual language-image models like PaLI, particularly with regards to issues of bias, representation, and cultural sensitivity?
+
 
 # Paper Overview Video Recording
 
